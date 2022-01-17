@@ -17,25 +17,32 @@ class TableCell extends React.Component {
     super(props);
 
     this.state = {
-      color: "",
+      color: "white",
     };
+
+    this.fillColor = this.fillColor.bind(this)
   }
 
+  fillColor(){
+    const penColor = document.getElementById("selectColor").value
+    this.setState({color: penColor})
+  }
 
   render() {
     return (
-      <section style={styles.cellStyle}></section>
+      <div style={{
+        backgroundColor: this.state.color,
+        width: "100px",
+        height: "100px",
+        margin: "3px",
+        border: "1px solid grey"
+      }} 
+        onClick={this.fillColor}>
+      
+      </div>
     );
   }
 }
 
 export default TableCell;
 
-const styles = {
-  cellStyle:{
-    backgroundColor: "blue",
-    width: "100px",
-    height: "100px",
-    margin: "3px"
-  }
-}

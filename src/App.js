@@ -7,7 +7,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      color: "transparent",
+      color: "red",
       row: 1,
       column: 1,
     };
@@ -16,6 +16,7 @@ class App extends React.Component {
     this.deleteRow = this.deleteRow.bind(this)
     this.addColumn = this.addColumn.bind(this)
     this.deleteColumn = this.deleteColumn.bind(this)
+    this.handleColorChange = this.handleColorChange.bind(this)
 
   }
 
@@ -24,7 +25,9 @@ class App extends React.Component {
   }
 
   deleteRow(){
-    this.setState({row: this.state.row > 0 ? this.state.row-1 : 0});
+    this.setState({
+      row: this.state.row > 0 ? this.state.row-1 : 0
+    });
   }
 
   addColumn(){
@@ -34,6 +37,11 @@ class App extends React.Component {
   deleteColumn(){
     this.setState({column: this.state.column > 0 ? this.state.column-1 : 0});
   }
+
+  handleColorChange(e){
+    this.setState({color: e.target.value})
+  }
+
 
 
   render() {
