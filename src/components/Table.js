@@ -16,7 +16,7 @@ class Table extends React.Component{
     render(){
         let table = []
         for(let i = 0; i < this.props.column; i++){
-            table.push(<TableColumn row={this.props.row} key={uuidv4()}/>)
+            table.push(<TableColumn row={this.props.row} key={uuidv4()} penColor={this.props.penColor}/>)
         }
         return(
             <div className="" style={styles.tableStyle}>

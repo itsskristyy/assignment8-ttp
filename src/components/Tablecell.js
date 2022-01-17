@@ -17,20 +17,20 @@ class TableCell extends React.Component {
     super(props);
 
     this.state = {
-      color: "white",
+      color: 'white'
     };
 
     this.fillColor = this.fillColor.bind(this)
   }
 
   fillColor(){
-    const penColor = document.getElementById("selectColor").value
+    let penColor = document.getElementById("selectColor").value
     this.setState({color: penColor})
   }
 
   render() {
     return (
-      <div style={{
+      <div className="cell" style={{
         backgroundColor: this.state.color,
         width: "100px",
         height: "100px",
