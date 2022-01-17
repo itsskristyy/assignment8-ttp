@@ -11,8 +11,29 @@ class App extends React.Component {
       row: 1,
       column: 1,
     };
+
+    this.addRow = this.addRow.bind(this)
+    this.deleteRow = this.deleteRow.bind(this)
+    this.addColumn = this.addColumn.bind(this)
+    this.deleteColumn = this.deleteColumn.bind(this)
+
   }
 
+  addRow(){
+    this.setState({row: this.state.row+1});
+  }
+
+  deleteRow(){
+    this.setState({row: this.state.row > 0 ? this.state.row-1 : 0});
+  }
+
+  addColumn(){
+    this.setState({column: this.state.column+1});
+  }
+
+  deleteColumn(){
+    this.setState({column: this.state.column > 0 ? this.state.column-1 : 0});
+  }
 
 
   render() {
@@ -20,10 +41,10 @@ class App extends React.Component {
       <div className="App">
 
       <div className = "buttons">
-      <button onClick={("")}> Add Row </button>
-      <button onClick={("")}> Delete Row </button>
-      <button onClick={("")}> Add Column </button>
-      <button onClick={("")}> Delete Column </button>
+      <button onClick={this.addRow}> Add Row </button>
+      <button onClick={this.deleteRow}> Delete Row </button>
+      <button onClick={this.addColumn}> Add Column </button>
+      <button onClick={this.deleteColumn}> Delete Column </button>
       <button onClick={("")}> Fill All </button>
       <button onClick={("")}> Clear All </button>
       <button onClick={("")}> Fill Uncolored </button>
@@ -40,7 +61,7 @@ class App extends React.Component {
 
 
 
-      <Table/>
+      <Table row={this.state.row} column={this.state.column}/>
 
 
       </div>
