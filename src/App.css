@@ -1,0 +1,19 @@
+button{
+ border: none;
+ color: black;
+ padding: 10px 24px;
+ font-size: 18px;
+ margin: 20px 7px;
+   border-radius: 7px;
+  justify-content: center;
+  font-family:serif;
+
+
+}
+option{
+  text-align: center;
+}
+button:hover{
+  background-color: #555555;
+  color: white;
+}
