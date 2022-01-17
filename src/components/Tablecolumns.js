@@ -13,7 +13,7 @@ class Column extends React.Component{
     render(){
         let col = []
         for (let i = 0; i < this.props.row; i++){
-            col.push(<TableCell key={uuidv4()} penColor={this.props.penColor}/>)
+            col.push(<TableCell key={uuidv4()} penColor={this.props.penColor} pressed={this.props.pressed}/>)
         }
         return(
             <div className="column">

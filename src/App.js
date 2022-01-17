@@ -1,6 +1,7 @@
 import React from "react";
 import Table from "./components/Table.js";
 import "./App.css";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class App extends React.Component {
       penColor: "red",
       row: 1,
       column: 1,
+      hovering: false
     };
 
     this.addRow = this.addRow.bind(this)
@@ -18,7 +20,8 @@ class App extends React.Component {
     this.deleteColumn = this.deleteColumn.bind(this)
     this.fillAll = this.fillAll.bind(this)
     this.clearAll = this.clearAll.bind(this)
-    this.handlePenColorChange = this.handlePenColorChange(this)
+    // this.handlePenColorChange = this.handlePenColorChange(this)
+    // this.setPressed = this.setPressed.bind(this)
 
   }
 
@@ -63,10 +66,14 @@ class App extends React.Component {
     } 
   }
 
-  handlePenColorChange(e){
-    this.setState({penColor: e.value})
-  }
+  // handlePenColorChange(e){
+  //   this.setState({penColor: e.value})
+  // }
 
+  setPressed(){
+    this.setState({hovering: !this.state.hovering})
+    console.log(this.state.hovering)
+  }
 
 
   render() {
@@ -92,10 +99,7 @@ class App extends React.Component {
       </select>
       </button>
 
-
-
-      <Table row={this.state.row} column={this.state.column} penColor={this.state.penColor}/>
-
+      <Table row={this.state.row} column={this.state.column} penColor={this.state.penColor} setPressed={this.setPressed}/>
 
       </div>
       </div>

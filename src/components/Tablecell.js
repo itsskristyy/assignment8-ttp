@@ -1,27 +1,21 @@
 import React from "react";
 
-
-// x x x
-// x x x
-
-// row = 2
-// column = 3
-
-// tablecolumn : 
-// x
-// x
-
-
 class TableCell extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       color: 'white'
     };
-
     this.fillColor = this.fillColor.bind(this)
   }
+
+  // componentDidMount(){
+  //   window.addEventListener("mouseover", (e)=>{
+  //     if(this.props.pressed == true && e.target.className == "cell"){
+  //       e.target.style.backgroundColor = document.getElementById("selectColor").value
+  //     }
+  //   })
+  // }
 
   fillColor(){
     let penColor = document.getElementById("selectColor").value
@@ -37,8 +31,9 @@ class TableCell extends React.Component {
         margin: "3px",
         border: "1px solid grey"
       }} 
-        onClick={this.fillColor}>
-      
+        onClick={this.fillColor}
+      >
+        {/* {this.props.pressed == true ? "t" : "f"} */}
       </div>
     );
   }
